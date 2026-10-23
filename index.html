@@ -418,6 +418,11 @@ footer { margin-top: 104px; }
   .linea-t li::before { top: 6px; left: -9px; }
 }
 .facil section > .pildora, .facil section > .ir { justify-self: start; }
+.refs { display: grid; gap: 28px; }
+.refs ol { margin: 10px 0 0; padding-left: 22px; display: grid; gap: 10px; color: var(--ink-2); font-size: 15px; }
+.refs li::marker { color: var(--muted); font-size: 13px; }
+.refs a { color: var(--ink); }
+.refs .uso { display: inline-block; margin-left: 6px; font-size: 11px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--accent); background: var(--accent-soft); border-radius: 999px; padding: 2px 9px; vertical-align: 1px; }
 
 </style>
 
@@ -439,6 +444,7 @@ footer { margin-top: 104px; }
     <a class="side-pg" data-pg="fase-6" href="#fase-6"><span class="num">06</span>C&oacute;mo atacarlo y qu&eacute; hacer</a>
     <div class="side-sub" data-pg="fase-6"><a class="sub" href="#atacarlo">C&oacute;mo atacarlo</a><a class="sub" href="#recomendaciones">Qu&eacute; hacer</a><a class="sub" href="#limites">L&iacute;mites</a></div>
     <a class="side-pg" data-pg="escudo-3d" href="#escudo-3d"><span class="num">07</span>El escudo en 3D</a>
+    <div class="side-sub" data-pg="escudo-3d"><a class="sub" href="#escena">El escudo</a><a class="sub" href="#referencias">Referencias</a></div>
   </nav>
   <p class="side-pie">Liga MX &middot; 2021&ndash;2026<br>Datos: Hudl StatsBomb</p>
 </aside>
@@ -1413,7 +1419,7 @@ T = (z &minus; &mu;J)&middot;w / (&mu;A &minus; &mu;J)&middot;w</div>
     <span class="ceja claro"><i></i>Club Am&eacute;rica &middot; 1916&ndash;2026</span>
     <h1 class="escena-tit">110 a&ntilde;os,<br>dos ideas.</h1>
     <p class="escena-desc" id="escena-desc">El club pone el dominio: 13 de 20 rasgos del estilo son del Am&eacute;rica, no del entrenador. Mueve el cursor para girar el escudo y elige un entrenador para ver su firma.</p>
-    <a class="pildora clara" href="#fase-2">Ver las tres preguntas <span class="p-flecha">→</span></a>
+    <a class="pildora clara" href="#referencias">Ver referencias <span class="p-flecha">→</span></a>
   </div>
   <div class="escena-der">
     <div class="dt-cards" role="group" aria-label="Elegir entrenador">
@@ -1423,6 +1429,57 @@ T = (z &minus; &mu;J)&middot;w / (&mu;A &minus; &mu;J)&middot;w</div>
     <p class="escena-lado" id="escena-lado">Jardine:<br>paciencia.</p>
   </div>
 </section>
+<div class="wrap">
+<section id="referencias">
+  <div class="head">
+    <span class="kicker">Referencias</span>
+    <h2>De d&oacute;nde salen los m&eacute;todos</h2>
+    <div class="prose"><p>Los m&eacute;todos de este reporte se basan en estos trabajos. Al lado de cada uno se indica en qu&eacute; parte del an&aacute;lisis lo usamos.</p></div>
+  </div>
+  <div class="refs">
+    <div>
+      <span class="label">Datos</span>
+      <ol>
+        <li>Hudl StatsBomb (2021&ndash;2026). Datos de eventos y 360 de la Liga MX, proporcionados por ISAC para uso exclusivo del Hackathon ISAC 2026. <span class="uso">Todo el reporte</span></li>
+      </ol>
+    </div>
+    <div>
+      <span class="label">F&uacute;tbol y anal&iacute;tica deportiva</span>
+      <ol>
+        <li>Rudd, S. (2011). <i>A Framework for Tactical Analysis and Individual Offensive Production Assessment in Soccer Using Markov Chains</i>. New England Symposium on Statistics in Sports. <span class="uso">Expected Threat</span></li>
+        <li>Singh, K. (2018). <i>Introducing Expected Threat (xT)</i>. <a href="https://karun.in/blog/expected-threat.html">karun.in</a>. <span class="uso">Expected Threat</span></li>
+        <li>Trainor, C. (2014). <i>Defensive Metrics: Measuring the Intensity of a High Press</i>. StatsBomb. <span class="uso">PPDA</span></li>
+        <li>Spearman, W. (2018). <i>Beyond Expected Goals</i>. MIT Sloan Sports Analytics Conference. <span class="uso">Control del espacio</span></li>
+        <li>Fern&aacute;ndez, J. y Bornn, L. (2018). <i>Wide Open Spaces: A Statistical Technique for Measuring Space Creation in Professional Soccer</i>. MIT Sloan Sports Analytics Conference. <span class="uso">Control del espacio</span></li>
+        <li>Le, H. M., Carr, P., Yue, Y. y Lucey, P. (2017). <i>Data-Driven Ghosting Using Deep Imitation Learning</i>. MIT Sloan Sports Analytics Conference. <span class="uso">El fantasma de Jardine</span></li>
+        <li>Decroos, T., Bransen, L., Van Haaren, J. y Davis, J. (2019). <i>Actions Speak Louder than Goals: Valuing Player Actions in Soccer</i>. KDD, 1851&ndash;1861. <span class="uso">Valor por acci&oacute;n (OBV)</span></li>
+        <li>Taki, T. y Hasegawa, J. (2000). <i>Visualization of Dominant Region in Team Games and Its Application to Teamwork Analysis</i>. Computer Graphics International, 227&ndash;235. <span class="uso">Control del espacio</span></li>
+      </ol>
+    </div>
+    <div>
+      <span class="label">Matem&aacute;ticas y estad&iacute;stica</span>
+      <ol>
+        <li>Villani, C. (2009). <i>Optimal Transport: Old and New</i>. Springer. <span class="uso">La mudanza</span></li>
+        <li>Peyr&eacute;, G. y Cuturi, M. (2019). <i>Computational Optimal Transport</i>. Foundations and Trends in Machine Learning, 11(5&ndash;6), 355&ndash;607. <span class="uso">La mudanza</span></li>
+        <li>Flamary, R. et al. (2021). <i>POT: Python Optimal Transport</i>. Journal of Machine Learning Research, 22(78), 1&ndash;8. <span class="uso">La mudanza</span></li>
+        <li>Truong, C., Oudre, L. y Vayatis, N. (2020). <i>Selective Review of Offline Change Point Detection Methods</i>. Signal Processing, 167, 107299. <span class="uso">Tras el tri</span></li>
+        <li>Fisher, R. A. (1936). <i>The Use of Multiple Measurements in Taxonomic Problems</i>. Annals of Eugenics, 7(2), 179&ndash;188. <span class="uso">&Iacute;ndice de transici&oacute;n</span></li>
+        <li>Kuhn, H. W. (1955). <i>The Hungarian Method for the Assignment Problem</i>. Naval Research Logistics Quarterly, 2, 83&ndash;97. <span class="uso">El fantasma de Jardine</span></li>
+        <li>Barrow, H. G., Tenenbaum, J. M., Bolles, R. C. y Wolf, H. C. (1977). <i>Parametric Correspondence and Chamfer Matching</i>. IJCAI, 659&ndash;663. <span class="uso">El fantasma de Jardine</span></li>
+        <li>Aurenhammer, F. (1991). <i>Voronoi Diagrams: A Survey of a Fundamental Geometric Data Structure</i>. ACM Computing Surveys, 23(3), 345&ndash;405. <span class="uso">Control del espacio</span></li>
+        <li>Metropolis, N. y Ulam, S. (1949). <i>The Monte Carlo Method</i>. Journal of the American Statistical Association, 44(247), 335&ndash;341. <span class="uso">Simulaci&oacute;n</span></li>
+        <li>Efron, B. y Tibshirani, R. J. (1993). <i>An Introduction to the Bootstrap</i>. Chapman &amp; Hall. <span class="uso">Intervalos</span></li>
+        <li>Good, P. (2005). <i>Permutation, Parametric and Bootstrap Tests of Hypotheses</i> (3.&ordf; ed.). Springer. <span class="uso">Pruebas de permutaci&oacute;n</span></li>
+        <li>Cover, T. M. y Thomas, J. A. (2006). <i>Elements of Information Theory</i> (2.&ordf; ed.). Wiley. <span class="uso">Entrop&iacute;a</span></li>
+        <li>Page, L., Brin, S., Motwani, R. y Winograd, T. (1999). <i>The PageRank Citation Ranking: Bringing Order to the Web</i>. Stanford InfoLab. <span class="uso">Red de pases</span></li>
+        <li>Freeman, L. C. (1977). <i>A Set of Measures of Centrality Based on Betweenness</i>. Sociometry, 40(1), 35&ndash;41. <span class="uso">Red de pases</span></li>
+      </ol>
+    </div>
+  </div>
+  <p class="note">C&oacute;digo del an&aacute;lisis: <a href="https://github.com/ReEspinosa/ClubAmerica">github.com/ReEspinosa/ClubAmerica</a>. Las im&aacute;genes y el escudo pertenecen al Club Am&eacute;rica; este es un an&aacute;lisis independiente y no una publicaci&oacute;n oficial del club.</p>
+</section>
+</div>
+
 </div>
 
 <footer>
