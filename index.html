@@ -382,6 +382,43 @@ a.chip:hover { background: rgba(255,255,255,.14); border-color: rgba(255,255,255
 @media (max-width: 900px) { .escena { grid-template-columns: 1fr; gap: 40vh; } .escena-der { align-items: flex-start; text-align: left; } }
 footer { margin-top: 104px; }
 
+/* Explicado facil */
+.facil section { padding-block: 72px 8px; }
+.frase-grande { font-size: clamp(28px, 3.6vw, 48px); line-height: 1.15; letter-spacing: -0.03em; font-weight: 500; max-width: 26ch; color: var(--ink); }
+.frase-grande b { font-weight: 600; }
+.facil-nota { color: var(--muted); max-width: 60ch; }
+.ideas5 { list-style: none; margin: 0; padding: 0; display: grid; gap: 18px; counter-reset: i; }
+.ideas5 li { counter-increment: i; display: grid; grid-template-columns: minmax(0, 320px) minmax(0, 1fr); gap: 28px; align-items: center; background: var(--surface); border-radius: 22px; padding: 22px; box-shadow: 0 0 0 1px var(--ring); }
+.ideas5 h3 { font-size: clamp(22px, 2.2vw, 28px); line-height: 1.15; letter-spacing: -0.02em; }
+.ideas5 h3::before { content: counter(i, decimal-leading-zero); display: block; font-size: 12px; font-weight: 600; color: var(--accent); letter-spacing: .1em; margin-bottom: 6px; }
+.ideas5 p { color: var(--ink-2); margin-top: 8px; max-width: 58ch; }
+.mini svg { display: block; width: 100%; height: auto; }
+.ir { display: inline-block; margin-top: 12px; font-size: 14px; font-weight: 600; color: var(--ink); text-decoration: none; border-bottom: 2px solid var(--yellow); }
+.tres { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.tres > div { background: var(--surface); border-radius: 22px; padding: 22px; box-shadow: 0 0 0 1px var(--ring); display: grid; gap: 8px; align-content: start; }
+.tres h3 { font-size: 22px; letter-spacing: -0.02em; }
+.tres p { color: var(--ink-2); }
+.num-g { width: 38px; height: 38px; border-radius: 50%; display: grid; place-items: center; background: var(--ink-0); color: var(--yellow); font-weight: 600; }
+.linea-t { list-style: none; margin: 0 0 18px; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 0; border-top: 3px solid var(--ink-0); }
+.linea-t li { position: relative; padding: 22px 16px 8px 0; display: grid; gap: 6px; }
+.linea-t li::before { content: ""; position: absolute; top: -9px; left: 0; width: 15px; height: 15px; border-radius: 50%; background: var(--yellow); box-shadow: 0 0 0 3px var(--ink-0); }
+.linea-t b { font-size: 20px; letter-spacing: -0.02em; }
+.linea-t span { color: var(--ink-2); font-size: 15px; }
+.facil-card { display: grid; gap: 10px; align-content: start; }
+.facil-card p { color: var(--ink-2); }
+.glosa { margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
+.glosa div { border-top: 1px solid var(--axis); padding-top: 12px; }
+.glosa dt { font-weight: 600; }
+.glosa dd { margin: 4px 0 0; color: var(--ink-2); font-size: 15px; }
+@media (max-width: 860px) {
+  .ideas5 li { grid-template-columns: 1fr; }
+  .tres { grid-template-columns: 1fr; }
+  .linea-t { grid-template-columns: 1fr; border-top: 0; border-left: 3px solid var(--ink-0); }
+  .linea-t li { padding: 4px 0 16px 22px; }
+  .linea-t li::before { top: 6px; left: -9px; }
+}
+.facil section > .pildora, .facil section > .ir { justify-self: start; }
+
 </style>
 
 <aside class="side" id="side" aria-label="Men&uacute;">
@@ -400,7 +437,9 @@ footer { margin-top: 104px; }
     <div class="side-sub" data-pg="fase-5"><a class="sub" href="#liguilla">Liguilla</a><a class="sub" href="#medio-tiempo">Medio tiempo</a><a class="sub" href="#desarrollo">Desarrollo de jugadores</a></div>
     <a class="side-pg" data-pg="fase-6" href="#fase-6"><span class="num">06</span>C&oacute;mo atacarlo y qu&eacute; hacer</a>
     <div class="side-sub" data-pg="fase-6"><a class="sub" href="#atacarlo">C&oacute;mo atacarlo</a><a class="sub" href="#recomendaciones">Qu&eacute; hacer</a><a class="sub" href="#limites">L&iacute;mites</a></div>
-    <a class="side-pg" data-pg="escudo-3d" href="#escudo-3d"><span class="num">07</span>El escudo en 3D</a>
+    <a class="side-pg" data-pg="explicado" href="#explicado"><span class="num">07</span>Explicado f&aacute;cil</a>
+    <div class="side-sub" data-pg="explicado"><a class="sub" href="#facil-ideas">El equipo en 5 ideas</a><a class="sub" href="#facil-dt">Ideas del entrenador</a><a class="sub" href="#facil-partido">Un partido t&iacute;pico</a><a class="sub" href="#facil-cambios">Qu&eacute; cambi&oacute;</a><a class="sub" href="#facil-rival">C&oacute;mo ganarle</a></div>
+    <a class="side-pg" data-pg="escudo-3d" href="#escudo-3d"><span class="num">08</span>El escudo en 3D</a>
   </nav>
   <p class="side-pie">Liga MX &middot; 2021&ndash;2026<br>Datos: Hudl StatsBomb</p>
 </aside>
@@ -430,7 +469,7 @@ footer { margin-top: 104px; }
   <div class="intro-txt">
     <span class="label">Qu&eacute; hicimos</span>
     <p class="intro-lede">Tomamos los eventos y las fotos 360 de StatsBomb de 388 partidos de la Liga MX y medimos 20 rasgos de estilo por partido. Con eso contamos c&oacute;mo juega el Am&eacute;rica de Andr&eacute; Jardine, qu&eacute; parte de ese estilo es suya y qu&eacute; parte es del club, c&oacute;mo cambi&oacute; despu&eacute;s del tricampeonato y qu&eacute; tanto se nota ya la mano de Guillermo Almada.</p>
-    <p class="intro-sub">El reporte est&aacute; dividido en seis fases. Puedes leerlas en orden o saltar a la que te interese desde el men&uacute; de la izquierda.</p>
+    <p class="intro-sub">El reporte est&aacute; dividido en seis fases. Si no viste los partidos o no te interesan los tecnicismos, empieza por <a href="#explicado"><b>Explicado f&aacute;cil</b></a>: ah&iacute; est&aacute; todo en palabras sencillas.</p>
   </div>
   <div class="hero-meta"><div class="datos">
     <div><b class="cuenta" data-v="388">388</b><span>partidos</span></div>
@@ -517,6 +556,12 @@ footer { margin-top: 104px; }
       <div class="t-meta"><span>Fase 06 &mdash; 3 secciones</span><span class="t-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></div>
       <div class="t-marca" aria-hidden="true">06</div>
       <div class="t-pie"><h3>C&oacute;mo atacarlo y qu&eacute; hacer</h3><p>Sus puntos d&eacute;biles vistos como rival, los KPIs a vigilar y los l&iacute;mites del an&aacute;lisis.</p><div class="chips"><span class="chip">C&oacute;mo atacarlo</span><span class="chip">Qu&eacute; hacer</span><span class="chip">L&iacute;mites</span></div></div>
+    </a></li>
+    <li><a class="tarjeta" href="#explicado">
+      <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-img="tienda" alt="" loading="lazy">
+      <div class="t-meta"><span>Para cualquiera &mdash; resumen</span><span class="t-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></div>
+      <div class="t-marca" aria-hidden="true">07</div>
+      <div class="t-pie"><h3>Explicado f&aacute;cil</h3><p>Si no viste los partidos, empieza aqu&iacute;: c&oacute;mo juega el equipo y cu&aacute;les son las ideas del entrenador, sin tecnicismos.</p><div class="chips"><span class="chip">5 ideas</span><span class="chip">Partido t&iacute;pico</span><span class="chip">C&oacute;mo ganarle</span></div></div>
     </a></li>
     <li><a class="tarjeta t-3d" href="#escudo-3d">
       <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-img="escudo" alt="" loading="lazy" class="t-escudo">
@@ -1306,8 +1351,90 @@ T = (z &minus; &mu;J)&middot;w / (&mu;A &minus; &mu;J)&middot;w</div>
   </ul>
 </section>
 </main>
+<div class="wrap siguiente"><a class="pildora oscura" href="#explicado">Siguiente: Explicado f&aacute;cil <span class="p-flecha"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></div>
+</div>
+
+<div class="pagina" id="explicado" hidden>
+<header class="wrap fase-cab">
+  <div class="fase-banner"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-img="tienda" alt=""><div class="fb-velo"></div>
+    <div class="fb-txt"><span class="ceja claro"><i></i>07 &middot; Para cualquiera</span><h1>Explicado f&aacute;cil</h1><p>Si no viste ning&uacute;n partido, aqu&iacute; est&aacute; todo lo que necesitas saber: c&oacute;mo juega el Am&eacute;rica de Jardine, cu&aacute;les son sus ideas y qu&eacute; cambi&oacute; con Almada. Sin tecnicismos.</p>
+    <div class="chips"><a class="chip" href="#facil-ideas">El equipo en 5 ideas</a><a class="chip" href="#facil-dt">Las ideas del entrenador</a><a class="chip" href="#facil-partido">Un partido, minuto a minuto</a><a class="chip" href="#facil-cambios">Qu&eacute; cambi&oacute;</a><a class="chip" href="#facil-rival">C&oacute;mo ganarle</a></div></div>
+  </div>
+</header>
+<main class="wrap facil">
+
+<section id="facil-frase">
+  <div class="frase-grande">El Am&eacute;rica <mark>domina con cualquier entrenador.</mark> Lo que Jardine le dio fue <b>paciencia</b>, <b>orden</b> para no sufrir al perder el bal&oacute;n y un <b>plan de dos tiempos</b>: esperar en el primero y apretar en el segundo.</div>
+  <p class="facil-nota">Esta p&aacute;gina resume todo el reporte en palabras sencillas. Cada idea viene de los datos de 388 partidos; si quieres ver los n&uacute;meros completos, cada bloque te lleva a su secci&oacute;n.</p>
+</section>
+
+<section id="facil-ideas">
+  <div class="head"><span class="kicker">C&oacute;mo juega</span><h2>El equipo en 5 ideas</h2>
+    <div class="prose"><p>Los dibujos son esquemas para entender la idea, no jugadas reales. El Am&eacute;rica siempre ataca hacia la derecha.</p></div></div>
+  <ol class="ideas5">
+    <li><div class="mini" data-mini="dominio"></div><div><h3>Tiene la pelota y vive en campo rival</h3><p>Tiene el bal&oacute;n m&aacute;s de la mitad del partido (56%) y 6 de cada 10 acciones cerca del &aacute;rea rival son suyas. Esto no lo invent&oacute; Jardine: el Am&eacute;rica jugaba as&iacute; con Ortiz y sigue as&iacute; con Almada.</p><a class="ir" href="#p1">Ver los datos &rarr;</a></div></li>
+    <li><div class="mini" data-mini="salida"></div><div><h3>Sale jugando desde atr&aacute;s y avanza llevando el bal&oacute;n</h3><p>El portero casi siempre la da corta. Luego los defensas y el contenci&oacute;n avanzan conduciendo, no con pelotazos. El ataque se carga por la izquierda: por ah&iacute; entra el 44% de sus llegadas.</p><a class="ir" href="#adn">Ver los datos &rarr;</a></div></li>
+    <li><div class="mini" data-mini="espera"></div><div><h3>Sin el bal&oacute;n, espera; no persigue</h3><p>Deja que el rival d&eacute; casi 20 pases antes de ir a quitarle la pelota (lo normal en la liga son 16). Prefiere estar ordenado que correr detr&aacute;s del bal&oacute;n. Es lo que m&aacute;s identifica a Jardine.</p><a class="ir" href="#defensa">Ver los datos &rarr;</a></div></li>
+    <li><div class="mini" data-mini="contra"></div><div><h3>Casi no sufre cuando pierde el bal&oacute;n</h3><p>Como siempre hay gente detr&aacute;s de la pelota, al rival le cuesta salir de contra: solo le genera 0.13 goles esperados por partido as&iacute;, de lo m&aacute;s bajo de todos los equipos que comparamos.</p><a class="ir" href="#defensa">Ver los datos &rarr;</a></div></li>
+    <li><div class="mini" data-mini="tiempos"></div><div><h3>Espera en el primer tiempo y aprieta en el segundo</h3><p>Despu&eacute;s del descanso presiona mucho m&aacute;s. Cuando iba perdiendo al medio tiempo, m&aacute;s de la mitad de las veces no termin&oacute; perdiendo. En el resto de la liga eso pasa una de cada siete veces.</p><a class="ir" href="#medio-tiempo">Ver los datos &rarr;</a></div></li>
+  </ol>
+</section>
+
+<section id="facil-dt">
+  <div class="head"><span class="kicker">Las ideas del entrenador</span><h2>Qu&eacute; pone Jardine que no pone el club</h2></div>
+  <div class="tres">
+    <div><span class="num-g">1</span><h3>Paciencia</h3><p>No sale a presionar como loco. Espera el momento y se cuida de que no lo agarren mal parado. Lo hac&iacute;a igual en San Luis, as&iacute; que es suyo.</p></div>
+    <div><span class="num-g">2</span><h3>Un plan para cada tiempo</h3><p>Primer tiempo para estudiar al rival, segundo para atacarlo. Si va perdiendo, sale a apretar; si va ganando, se repliega y cuida el resultado.</p></div>
+    <div><span class="num-g">3</span><h3>Pragmatismo en finales</h3><p>En liguilla cambia: le deja m&aacute;s el bal&oacute;n al rival y tira menos, pero no concede m&aacute;s. As&iacute; gan&oacute; sus tres primeras liguillas seguidas.</p></div>
+  </div>
+</section>
+
+<section id="facil-partido">
+  <div class="head"><span class="kicker">Un partido t&iacute;pico</span><h2>Contado en minutos</h2>
+    <div class="prose"><p>Con todos sus partidos armamos el partido &ldquo;promedio&rdquo; del Am&eacute;rica de Jardine. La palabra que mejor lo describe es <b>constante</b>: en cada tramo de 15 minutos genera entre 57% y 61% del peligro del partido.</p></div></div>
+  <ol class="linea-t">
+    <li><b>0&prime;&ndash;15&prime;</b><span>Toma la pelota y la mueve sin prisa. Presiona poco: est&aacute; midiendo al rival.</span></li>
+    <li><b>15&prime;&ndash;45&prime;</b><span>Instala el juego en campo rival, carga por la izquierda y concede muy poco.</span></li>
+    <li><b>Descanso</b><span>El ajuste: si no va ganando, el equipo sale a presionar mucho m&aacute;s arriba.</span></li>
+    <li><b>45&prime;&ndash;75&prime;</b><span>Su mejor momento sin bal&oacute;n. Donde el Am&eacute;rica de Ortiz se ca&iacute;a (60&prime;&ndash;75&prime;), el de Jardine aguanta.</span></li>
+    <li><b>75&prime;&ndash;90&prime;</b><span>Si va ganando, suelta la pelota y cierra espacios: solo 1 de cada 10 veces se le escapa el triunfo.</span></li>
+  </ol>
+  <a class="pildora oscura" href="#simulador">Ver la animaci&oacute;n del partido t&iacute;pico <span class="p-flecha"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+</section>
+
+<section id="facil-cambios">
+  <div class="head"><span class="kicker">Con el tiempo</span><h2>Qu&eacute; cambi&oacute;</h2></div>
+  <div class="grid2">
+    <div class="panel facil-card"><span class="label">Despu&eacute;s del tricampeonato</span><h3>No se relaj&oacute;: perdi&oacute; colmillo</h3><p>Desde febrero de 2025 tuvo m&aacute;s el bal&oacute;n y presion&oacute; m&aacute;s, pero sus tiros fueron peores (cada tiro val&iacute;a 0.113 goles esperados y baj&oacute; a 0.088). No era que no pasaran la pelota: llegaban a tirar desde lugares m&aacute;s dif&iacute;ciles.</p><a class="ir" href="#p2">Ver los datos &rarr;</a></div>
+    <div class="panel facil-card"><span class="label">Con Almada</span><h3>Mismo equipo, bloque m&aacute;s estirado</h3><p>Todav&iacute;a juega en los mismos lugares que con Jardine. Lo que cambi&oacute; es la forma: presiona m&aacute;s cerca del bal&oacute;n, pero el equipo queda casi 3 yardas m&aacute;s largo y deja huecos. Por eso le llegan m&aacute;s.</p><a class="ir" href="#fantasma">Ver el fantasma de Jardine &rarr;</a></div>
+  </div>
+</section>
+
+<section id="facil-rival">
+  <div class="head"><span class="kicker">Si fueras el rival</span><h2>C&oacute;mo le ganar&iacute;as al Am&eacute;rica de hoy</h2></div>
+  <div class="tres">
+    <div><span class="num-g">1</span><h3>Atacar por su izquierda</h3><p>Por ese lado le llega el 41% de los ataques y es donde m&aacute;s espacio deja cerca de su &aacute;rea.</p></div>
+    <div><span class="num-g">2</span><h3>Aprovechar los saques de banda</h3><p>Le generan el doble de peligro que al Am&eacute;rica de Jardine.</p></div>
+    <div><span class="num-g">3</span><h3>Presionar su salida</h3><p>1 de cada 3 veces que pierde el bal&oacute;n cerca de su &aacute;rea, el rival termina tirando en menos de 10 segundos.</p></div>
+  </div>
+  <a class="ir" href="#atacarlo">Ver el plan completo &rarr;</a>
+</section>
+
+<section id="facil-glosario">
+  <div class="head"><span class="kicker">Para leer el resto del reporte</span><h2>Cinco palabras que vas a ver</h2></div>
+  <dl class="glosa">
+    <div><dt>xG (goles esperados)</dt><dd>Qu&eacute; tan probable era que un tiro fuera gol, de 0 a 1. Un penal vale casi 0.8; un tiro desde lejos, casi 0.</dd></div>
+    <div><dt>PPDA</dt><dd>Cu&aacute;ntos pases deja dar un equipo al rival antes de ir a quitarle el bal&oacute;n. M&aacute;s alto = presiona menos.</dd></div>
+    <div><dt>Field tilt</dt><dd>Qu&eacute; parte del juego cerca del &aacute;rea rival es tuya. Mide qui&eacute;n &ldquo;inclina&rdquo; la cancha.</dd></div>
+    <div><dt>Datos 360</dt><dd>Una foto de d&oacute;nde estaba cada jugador en el momento de cada jugada.</dd></div>
+    <div><dt>Bloque</dt><dd>C&oacute;mo se acomoda el equipo sin bal&oacute;n: qu&eacute; tan arriba, qu&eacute; tan largo y qu&eacute; tan ancho.</dd></div>
+  </dl>
+</section>
+
+</main>
 <div class="wrap siguiente"><a class="pildora oscura" href="#escudo-3d">Siguiente: El escudo en 3D <span class="p-flecha"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></div>
 </div>
+
 
 <div class="pagina" id="escudo-3d" hidden>
 <section class="escena" id="escena" aria-label="Escudo del Club Am&eacute;rica en 3D">
@@ -2971,6 +3098,68 @@ function iniciarEscudo() {
     });
   }));
 }
+
+/* Esquemas sencillos para "Explicado facil" (dibujos ilustrativos, no jugadas reales) */
+(function miniCanchas() {
+  const W = 320, H = 224, m = 12, sx = x => m + (W - 2 * m) * x / 120, sy = y => m + (H - 2 * m) * y / 80;
+  const ORO = "var(--jardine)", GRIS = "#8a8984", TINTA = "var(--ink)";
+  document.querySelectorAll(".mini[data-mini]").forEach((box, k) => {
+    box.innerHTML = "";
+    const svg = document.createElementNS(NS, "svg"); svg.setAttribute("viewBox", `0 0 ${W} ${H}`); svg.setAttribute("role", "img"); box.appendChild(svg);
+    const id = "fm" + k, defs = el("defs", {}, svg);
+    [["o", "#b8860b"], ["t", "#161614"], ["g", "#8a8984"]].forEach(([s, c]) => {
+      const mk = el("marker", { id: id + s, viewBox: "0 0 10 10", refX: 8, refY: 5, markerWidth: 5, markerHeight: 5, orient: "auto" }, defs);
+      el("path", { d: "M0,0 L10,5 L0,10 z", fill: c }, mk);
+    });
+    el("rect", { x: sx(0), y: sy(0), width: sx(120) - sx(0), height: sy(80) - sy(0), rx: 8, fill: "var(--paper-2)" }, svg);
+    const g = el("g", { fill: "none", stroke: "var(--axis)", "stroke-width": 1.4 }, svg);
+    el("rect", { x: sx(0), y: sy(0), width: sx(120) - sx(0), height: sy(80) - sy(0), rx: 8 }, g);
+    el("line", { x1: sx(60), x2: sx(60), y1: sy(0), y2: sy(80) }, g);
+    el("circle", { cx: sx(60), cy: sy(40), r: sx(10) - sx(0) }, g);
+    [0, 102].forEach(x0 => el("rect", { x: sx(x0), y: sy(18), width: sx(18) - sx(0), height: sy(62) - sy(18) }, g));
+    const punto = (x, y, c, r = 6) => el("circle", { cx: sx(x), cy: sy(y), r, fill: c, stroke: "#fff", "stroke-width": 1.5 }, svg);
+    const flecha = (x0, y0, x1, y1, c, s, dash) => el("line", { x1: sx(x0), y1: sy(y0), x2: sx(x1), y2: sy(y1), stroke: c, "stroke-width": 2.2, "stroke-linecap": "round", "stroke-dasharray": dash || null, "marker-end": `url(#${id}${s})` }, svg);
+    const texto = (x, y, s, a = "start", c = TINTA) => txt(svg, sx(x), sy(y), s, { "text-anchor": a, style: `font-size:13px;font-weight:600;fill:${c}` });
+    const tipo = box.dataset.mini;
+    if (tipo === "dominio") {
+      el("rect", { x: sx(60), y: sy(0), width: sx(120) - sx(60), height: sy(80) - sy(0), fill: "rgba(184,134,11,.16)" }, svg);
+      [[4, 40], [30, 25], [30, 55], [55, 40], [70, 12], [70, 68], [78, 30], [80, 52], [96, 20], [98, 45], [104, 62]].forEach(([x, y]) => punto(x, y, ORO));
+      [[108, 40], [112, 30], [112, 50], [90, 36], [88, 58]].forEach(([x, y]) => punto(x, y, GRIS, 5));
+      texto(62, 77, "aquí pasa la mayor parte del partido", "start", "#7a5e12");
+    } else if (tipo === "salida") {
+      punto(4, 40, ORO); punto(20, 26, ORO); punto(20, 54, ORO); punto(36, 40, ORO);
+      flecha(5, 38, 18, 28, "#161614", "t"); flecha(5, 42, 18, 52, "#161614", "t");
+      flecha(21, 25, 50, 14, "#b8860b", "o", "5 4"); flecha(37, 39, 58, 30, "#b8860b", "o", "5 4");
+      flecha(52, 13, 96, 9, "#b8860b", "o", "5 4"); punto(98, 9, ORO);
+      texto(4, 76, "pases cortos", "start", "#161614"); texto(116, 23, "conduce por la izquierda", "end", "#7a5e12");
+    } else if (tipo === "espera") {
+      const riv = [[12, 40], [26, 22], [26, 58], [42, 34], [44, 52]];
+      riv.forEach(([x, y]) => punto(x, y, GRIS, 5));
+      [[0, 1], [1, 3], [3, 4], [4, 2], [2, 0]].forEach(([a, b]) => el("line", { x1: sx(riv[a][0]), y1: sy(riv[a][1]), x2: sx(riv[b][0]), y2: sy(riv[b][1]), stroke: "#8a8984", "stroke-width": 1.3, "stroke-dasharray": "3 3" }, svg));
+      [[60, 16], [60, 32], [60, 48], [60, 64], [72, 22], [72, 40], [72, 58], [86, 18], [86, 40], [86, 62], [116, 40]].forEach(([x, y]) => punto(x, y, ORO));
+      texto(28, 76, "el rival da ~20 pases", "middle", "#4f4d47"); texto(74, 7, "bloque ordenado", "middle", "#7a5e12");
+    } else if (tipo === "contra") {
+      punto(92, 40, GRIS, 6);
+      txt(svg, sx(92) + 9, sy(40) - 9, "×", { style: "font-size:18px;font-weight:700;fill:#d0312d" });
+      [[96, 26], [98, 54], [84, 30], [84, 50]].forEach(([x, y]) => punto(x, y, ORO));
+      [[64, 22], [64, 40], [64, 58], [50, 34], [50, 48]].forEach(([x, y]) => punto(x, y, ORO));
+      flecha(96, 27, 93, 35, "#b8860b", "o"); flecha(98, 53, 94, 45, "#b8860b", "o");
+      texto(92, 74, "pierde la pelota…", "middle", "#d0312d"); texto(57, 9, "…pero ya hay gente atrás", "middle", "#7a5e12");
+    } else if (tipo === "tiempos") {
+      svg.innerHTML = "";
+      const barra = (y, v, lab, val) => {
+        txt(svg, 12, y - 8, lab, { style: "font-size:13px;font-weight:600;fill:var(--ink)" });
+        el("rect", { x: 12, y, width: W - 24, height: 22, rx: 11, fill: "var(--paper-2)" }, svg);
+        el("rect", { x: 12, y, width: (W - 24) * v, height: 22, rx: 11, fill: "#b8860b", opacity: 0.35 + 0.6 * v }, svg);
+        txt(svg, W - 16, y + 15, val, { "text-anchor": "end", style: "font-size:12px;font-weight:600;fill:var(--ink)" });
+      };
+      txt(svg, 12, 22, "Qué tanto presiona", { style: "font-size:12px;font-weight:600;letter-spacing:.08em;fill:var(--muted)" });
+      barra(62, 0.42, "1er tiempo: espera", "deja 26 pases");
+      barra(124, 0.78, "2o tiempo: aprieta", "deja 20 pases");
+      txt(svg, 12, 190, "Lo hace en el América y en San Luis.", { style: "font-size:12px;fill:var(--ink-2)" });
+    }
+  });
+})();
 
 </script>
 
