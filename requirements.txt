@@ -1,0 +1,8 @@
+statsbombpy
+pandas
+numpy
+scipy
+matplotlib
+pyarrow
+networkx
+pot
