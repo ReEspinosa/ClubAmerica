@@ -1,0 +1,9 @@
+.venv/
+data/
+*.parquet
+*.pkl
+.env
+__pycache__/
+.DS_Store
+partidos_jardine.csv
+jardine_en_datos.html
